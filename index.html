@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aging In Place Home Safety Checklist | Free 2-Minute Assessment</title>
+<meta name="description" content="Take our free aging-in-place home safety checklist. Answer 12 quick questions and get a personalized risk assessment for fall hazards and accessibility concerns — no sign-up required.">
+
+<!--
+  ADSENSE SETUP:
+  1. Uncomment the script tag below and replace ca-pub-XXXXXXXXXXXXXXXX
+  2. Uncomment each <ins class="adsbygoogle"> block once you have real ad-unit slot IDs
+  3. Add ads.txt at domain root: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+-->
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --stone:#F0EEE6; --stone-deep:#E7E3D8; --ink:#1E2A2E; --ink-soft:#4A5A5E;
+    --brass:#A2793E; --brass-deep:#8A6531; --sage:#48665C; --sage-deep:#33463F;
+    --line:#D8D2C2; --white:#FFFFFF;
+    --amber:#B4531E; --amber-lt:#FBEEE4;
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--stone); color:var(--ink); line-height:1.55;}
+  h1,h2,h3{font-family:'Source Serif 4', serif; font-weight:600; line-height:1.15; margin:0 0 0.5em 0; color:var(--ink);}
+  p{margin:0 0 1em 0;}
+  a{color:var(--sage-deep);}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  .narrow{max-width:680px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- Ad slots ---------- */
+  .ad-slot{
+    border:1px dashed #B7AF9A; background:#FBFAF6; color:#8B8474;
+    font-size:12px; letter-spacing:0.02em; display:flex; align-items:center;
+    justify-content:center; text-align:center; padding:14px; border-radius:2px;
+  }
+  .ad-top{min-height:60px; margin:12px auto; max-width:1080px;}
+  .ad-inline{min-height:120px; margin:40px 0;}
+
+  /* ---------- Header ---------- */
+  header{background:var(--white); border-bottom:1px solid var(--line);}
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 24px; max-width:1080px; margin:0 auto; gap:16px; flex-wrap:wrap;
+  }
+  .brand{font-family:'Source Serif 4', serif; font-size:20px; font-weight:700; color:var(--ink); text-decoration:none; letter-spacing:-0.01em; max-width:320px; line-height:1.2;}
+  .brand em{font-style:normal; color:var(--brass-deep);}
+  nav a{margin-left:18px; font-size:14px; color:var(--ink-soft); text-decoration:none;}
+  nav a:hover{color:var(--sage-deep);}
+  .safehome-cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--sage-deep); color:var(--white); text-decoration:none;
+    padding:9px 16px; border-radius:3px; font-size:13px; font-weight:500;
+    white-space:nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:52px 0 36px 0;}
+  .hero .kicker{color:var(--brass-deep); font-size:14px; font-weight:500; margin-bottom:10px;}
+  .hero h1{font-size:clamp(28px, 4vw, 42px); max-width:18ch;}
+  .hero p.lede{font-size:17px; color:var(--ink-soft); max-width:54ch; margin-bottom:0;}
+
+  /* ---------- Quiz card ---------- */
+  .quiz-card{
+    background:var(--white); border:1px solid var(--line); border-radius:6px;
+    padding:32px; margin-top:32px; box-shadow:0 2px 8px rgba(30,42,46,0.07);
+  }
+  .progress-row{display:flex; align-items:center; gap:12px; margin-bottom:12px;}
+  .q-num{font-family:'Source Serif 4', serif; font-size:36px; font-weight:700; color:var(--brass-deep); line-height:1; min-width:44px;}
+  .q-num-label{font-size:13px; color:var(--ink-soft); padding-top:4px;}
+  .progress-track{height:6px; background:var(--stone-deep); border-radius:3px; overflow:hidden; margin-bottom:24px;}
+  .progress-fill{height:100%; background:var(--sage-deep); border-radius:3px; transition:width 0.2s ease;}
+  .q-text{font-family:'Source Serif 4', serif; font-size:20px; font-weight:600; margin-bottom:18px;}
+  .options{display:flex; flex-direction:column; gap:10px;}
+  .opt-btn{
+    text-align:left; background:var(--white); border:1.5px solid var(--line); border-radius:4px;
+    padding:13px 16px; font-size:15px; font-family:inherit; color:var(--ink); cursor:pointer;
+    transition:border-color 0.12s ease, background 0.12s ease;
+  }
+  .opt-btn:hover{border-color:var(--brass); background:#FBFAF6;}
+  .opt-btn.selected{border-color:var(--sage-deep); background:#E4EFE9; color:var(--sage-deep); font-weight:500;}
+  .select-hint{font-size:13px; color:var(--amber); margin-top:10px; display:none;}
+  .nav-row{display:flex; justify-content:space-between; align-items:center; margin-top:20px;}
+  .back-link{font-size:14px; color:var(--ink-soft); text-decoration:none; cursor:pointer;}
+  .back-link:hover{color:var(--sage-deep);}
+  .back-link.hidden{visibility:hidden;}
+  .next-btn{
+    background:var(--brass-deep); color:var(--white); border:none; padding:13px 28px;
+    border-radius:3px; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer;
+    transition:background 0.15s ease;
+  }
+  .next-btn:hover{background:#734F26;}
+
+  /* ---------- Results ---------- */
+  .result-tier{font-size:14px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; padding:6px 14px; border-radius:20px; display:inline-block; margin-bottom:16px;}
+  .tier-low{background:#E4EFE9; color:var(--sage-deep);}
+  .tier-moderate{background:var(--amber-lt); color:var(--amber);}
+  .tier-high{background:#FBE4E0; color:#A03A2C;}
+  .flags{margin:20px 0; padding:0; list-style:none;}
+  .flags li{padding:10px 0; border-bottom:1px solid var(--line); font-size:15px; color:var(--ink-soft); display:flex; gap:10px;}
+  .flags li:last-child{border-bottom:none;}
+  .flag-dot{width:6px; height:6px; border-radius:50%; background:var(--amber); margin-top:8px; flex-shrink:0;}
+  .disclaimer{font-size:13px; color:var(--ink-soft); background:var(--stone-deep); border-radius:4px; padding:14px 16px; margin:20px 0;}
+  .restart-link{display:inline-block; margin-top:16px; font-size:14px; color:var(--ink-soft); cursor:pointer;}
+  .restart-link:hover{color:var(--sage-deep);}
+
+  /* ---------- SafeHome banner ---------- */
+  .safehome-banner{
+    background:var(--sage-deep); color:var(--white); border-radius:6px;
+    padding:28px; display:flex; justify-content:space-between; align-items:center;
+    gap:20px; flex-wrap:wrap; margin-top:24px;
+  }
+  .safehome-banner h3{color:var(--white); font-size:21px; margin-bottom:6px;}
+  .safehome-banner p{color:#D7E2DC; max-width:42ch; margin-bottom:0; font-size:14.5px;}
+  .safehome-banner a.btn{background:var(--white); color:var(--sage-deep); text-decoration:none; padding:11px 20px; border-radius:3px; font-weight:600; white-space:nowrap;}
+
+  /* ---------- Content sections ---------- */
+  section{padding:52px 0;}
+  .section-divider{border:none; border-top:1px solid var(--line); margin:0;}
+  .section-head{max-width:60ch; margin-bottom:32px;}
+  .section-head h2{font-size:28px;}
+  .section-head p{color:var(--ink-soft); font-size:16px;}
+
+  /* ---------- Search card ---------- */
+  .search-card{
+    background:var(--white); border:1px solid var(--line); border-radius:4px;
+    padding:28px; box-shadow:0 1px 2px rgba(30,42,46,0.04);
+  }
+  .search-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media(max-width:640px){.search-grid{grid-template-columns:1fr;}}
+  .field label{display:block; font-size:13px; font-weight:500; color:var(--ink-soft); margin-bottom:6px;}
+  .field select,.field input{
+    width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:3px;
+    font-size:15px; font-family:inherit; background:var(--white); color:var(--ink);
+  }
+  .field select:focus,.field input:focus{outline:2px solid var(--brass); outline-offset:1px; border-color:var(--brass);}
+  .search-actions{margin-top:20px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  button.search-btn{
+    background:var(--brass-deep); color:var(--white); border:none; padding:13px 26px;
+    border-radius:3px; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer;
+  }
+  button.search-btn:hover{background:#734F26;}
+  .search-note{font-size:13px; color:var(--ink-soft);}
+
+  /* ---------- Credential cards ---------- */
+  .cred-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:20px;}
+  .cred-card{background:var(--white); border:1px solid var(--line); border-radius:4px; padding:20px;}
+  .cred-card .code{font-family:'Source Serif 4', serif; font-size:20px; font-weight:700; color:var(--brass-deep);}
+  .cred-card p{font-size:14px; color:var(--ink-soft); margin-top:8px;}
+
+  /* ---------- Why section ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:24px; margin-top:8px;}
+  .why-card{padding:20px 0;}
+  .why-card h3{font-size:17px; margin-bottom:8px;}
+  .why-card p{font-size:14px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line); padding:32px 0; margin-top:24px;}
+  footer p{font-size:13px; color:var(--ink-soft); max-width:70ch;}
+  footer .links{display:flex; gap:16px; margin-top:12px; font-size:13px; flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+<div class="ad-slot ad-top wrap"><span>Advertisement</span></div>
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#top">Aging In Place <em>Home Safety Checklist</em></a>
+    <nav style="display:flex; align-items:center; flex-wrap:wrap; gap:4px;">
+      <a href="#find-specialist">Find a Specialist</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="safehome-cta" href="https://safehomepartners.com?utm_source=capschecklist&utm_medium=referral&utm_campaign=header_cta" target="_blank" rel="noopener" style="margin-left:8px;">
+        Get a full report — SafeHome Partners →
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="narrow">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" style="padding-bottom:0;">
+      <div class="kicker">Free · 2 minutes · No sign-up required</div>
+      <h1>Is your home ready for aging in place?</h1>
+      <p class="lede">Answer 12 quick questions about the home and get a personalized risk assessment for fall hazards and accessibility concerns — right now, no account needed.</p>
+
+      <!-- ===== QUIZ ===== -->
+      <div class="quiz-card" id="quiz-card">
+
+        <div id="quiz-view">
+          <div class="progress-row">
+            <div class="q-num" id="q-num">1</div>
+            <div class="q-num-label">of 12</div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:8%"></div></div>
+          <div class="q-text" id="q-text"></div>
+          <div class="options" id="q-options"></div>
+          <div class="select-hint" id="select-hint">Please select an answer above.</div>
+          <div class="nav-row">
+            <a class="back-link hidden" id="back-link">← Back</a>
+            <button class="next-btn" id="next-btn">Next →</button>
+          </div>
+        </div>
+
+        <div id="results-view" style="display:none;">
+          <div id="result-tier-badge"></div>
+          <h2 id="result-heading"></h2>
+          <p id="result-summary"></p>
+          <ul class="flags" id="result-flags"></ul>
+          <div class="disclaimer">This checklist uses simple, fixed scoring based on your answers — it is a quick screening tool, not a professional evaluation. A full assessment considers actual room measurements, photos, and many more factors.</div>
+
+          <div class="safehome-banner">
+            <div>
+              <h3>Want the full picture?</h3>
+              <p>SafeHome Partners builds a personalized, AI-powered report with specific measurements, cost estimates, and a prioritized action plan — starting at $79.</p>
+            </div>
+            <a class="btn" href="https://safehomepartners.com?utm_source=capschecklist&utm_medium=referral&utm_campaign=checklist_results" target="_blank" rel="noopener">Get your full report →</a>
+          </div>
+
+          <a class="restart-link" id="restart-link">↻ Take the checklist again</a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="ad-slot ad-inline"><span>Advertisement</span></div>
+
+    <!-- ===== WHY IT MATTERS ===== -->
+    <section>
+      <div class="section-head">
+        <h2>Why this checklist matters</h2>
+        <p>Most fall-related injuries happen at home — and most are preventable with the right modifications. A quick assessment is the first step.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Falls are the #1 cause of injury in older adults</h3>
+          <p>The CDC estimates 3 million older adults are treated in emergency rooms for falls each year. Most involve common home hazards.</p>
+        </div>
+        <div class="why-card">
+          <h3>Small changes have big impact</h3>
+          <p>Grab bars, better lighting, and removing loose rugs are low-cost fixes that dramatically reduce fall risk.</p>
+        </div>
+        <div class="why-card">
+          <h3>Know before you call a contractor</h3>
+          <p>Understanding your home's risk profile helps you have a more informed conversation with any aging-in-place professional.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ===== FIND A SPECIALIST ===== -->
+  <div class="wrap">
+    <section id="find-specialist">
+      <div class="section-head">
+        <h2>Find a certified aging-in-place specialist</h2>
+        <p>Once you know what your home needs, a CAPS-certified contractor can assess the details and give you an accurate plan. Search NAHB's official directory below.</p>
+      </div>
+
+      <div class="search-card">
+        <div class="search-grid">
+          <div class="field">
+            <label for="designation">Credential</label>
+            <select id="designation">
+              <option value="CAPS" selected>CAPS — Certified Aging-in-Place Specialist</option>
+              <option value="CGR">CGR — Certified Graduate Remodeler</option>
+              <option value="CGB">CGB — Certified Graduate Builder</option>
+              <option value="CGP">CGP — Certified Green Professional</option>
+              <option value="CGA">CGA — Certified Graduate Associate</option>
+              <option value="GMB">GMB — Graduate Master Builder</option>
+              <option value="MIRM">MIRM — Master in Residential Marketing</option>
+              <option value="">All credentials</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="keyword">City, state, or name (optional)</label>
+            <input type="text" id="keyword" placeholder="e.g. Rocky Mount, NC">
+          </div>
+        </div>
+        <div class="search-actions">
+          <button class="search-btn" onclick="openNahbSearch()">Search NAHB directory</button>
+          <span class="search-note">Opens NAHB's official site in a new tab, pre-filtered by credential.</span>
+        </div>
+      </div>
+
+      <div class="ad-slot ad-inline" style="margin-top:32px;"><span>Advertisement</span></div>
+
+      <div class="section-head" style="margin-top:48px;">
+        <h2>What the credentials mean</h2>
+        <p>NAHB certifications are earned through coursework, field experience, and continuing education.</p>
+      </div>
+      <div class="cred-grid">
+        <div class="cred-card">
+          <div class="code">CAPS</div>
+          <p>Certified Aging-in-Place Specialist. Trained in home modifications that let people live safely and independently as they age — wider doorways, zero-step entries, grab bars, walk-in showers.</p>
+        </div>
+        <div class="cred-card">
+          <div class="code">CGR</div>
+          <p>Certified Graduate Remodeler. Demonstrates experience and business skill specific to remodeling projects, from planning through completion.</p>
+        </div>
+        <div class="cred-card">
+          <div class="code">CGB</div>
+          <p>Certified Graduate Builder. Focused on new-construction expertise, project management, and building-science fundamentals.</p>
+        </div>
+        <div class="cred-card">
+          <div class="code">CGP</div>
+          <p>Certified Green Professional. Covers energy-efficient, sustainable building and remodeling practices.</p>
+        </div>
+      </div>
+
+      <div class="safehome-banner" style="margin-top:48px;">
+        <div>
+          <h3>Already know you need home modifications?</h3>
+          <p>SafeHome Partners connects families with vetted contractors and runs in-home aging-in-place assessments — no need to search on your own.</p>
+        </div>
+        <a class="btn" href="https://safehomepartners.com?utm_source=capschecklist&utm_medium=referral&utm_campaign=banner" target="_blank" rel="noopener">Visit SafeHome Partners</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>AgingInPlaceChecklist.com is an independent resource and is not affiliated with, endorsed by, or sponsored by the National Association of Home Builders (NAHB). The checklist is for general informational purposes only and is not a substitute for a professional home safety assessment. Contractor listings and credential data come from NAHB at nahb.org.</p>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://safehomepartners.com?utm_source=capschecklist&utm_medium=referral&utm_campaign=footer" target="_blank" rel="noopener">SafeHome Partners</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var QUESTIONS = [
+    {
+      id: 'stories',
+      text: 'How many stories is the home?',
+      options: [
+        { label: '1 story', points: 0 },
+        { label: '2 or more stories', points: 2 }
+      ]
+    },
+    {
+      id: 'main_floor_living',
+      text: 'Is there a full bathroom and a bedroom on the main (entry-level) floor?',
+      skipIf: function(a){ return a.stories === 0; },
+      options: [
+        { label: 'Yes', points: 0 },
+        { label: 'No', points: 2 }
+      ]
+    },
+    {
+      id: 'mobility_aid',
+      text: 'Does anyone in the home currently use a cane, walker, wheelchair, or other mobility aid?',
+      options: [
+        { label: 'No', points: 0 },
+        { label: 'Yes', points: 2 }
+      ]
+    },
+    {
+      id: 'fall_history',
+      text: 'Has anyone in the home fallen in the past year?',
+      options: [
+        { label: 'No', points: 0 },
+        { label: 'Yes', points: 3, flag: 'A fall in the past year is one of the strongest predictors of future falls — this is worth prioritizing.' }
+      ]
+    },
+    {
+      id: 'bathroom_bars',
+      text: 'Does the primary bathroom have grab bars near the toilet and shower or tub?',
+      options: [
+        { label: 'Yes, both', points: 0 },
+        { label: 'Only one', points: 1, flag: 'Grab bars near both the toilet and shower/tub significantly reduce bathroom fall risk.' },
+        { label: 'Neither', points: 2, flag: 'No grab bars near the toilet or shower/tub — this is one of the most common and highest-impact fixes.' }
+      ]
+    },
+    {
+      id: 'shower_type',
+      text: 'Is the primary bathing area a walk-in/zero-threshold shower, or a tub you step into?',
+      options: [
+        { label: 'Walk-in or zero-threshold shower', points: 0 },
+        { label: 'Tub, with grab bars and non-slip surface', points: 1 },
+        { label: 'Tub, without grab bars', points: 2, flag: 'Stepping into a tub without support is a common source of bathroom falls.' }
+      ]
+    },
+    {
+      id: 'rugs',
+      text: 'Are there loose rugs or runners along the main walking paths?',
+      options: [
+        { label: 'No', points: 0 },
+        { label: 'Yes', points: 2, flag: 'Loose rugs are a frequent trip hazard, especially on stairs or transitions between rooms.' }
+      ]
+    },
+    {
+      id: 'entry_steps',
+      text: 'Are there steps (without a ramp option) to get into the home?',
+      options: [
+        { label: 'No steps, or a ramp is available', points: 0 },
+        { label: '1–2 steps', points: 1 },
+        { label: '3 or more steps', points: 2, flag: 'Multiple entry steps with no ramp can become a real barrier over time.' }
+      ]
+    },
+    {
+      id: 'doorway_width',
+      text: 'Would a walker or wheelchair comfortably fit through the home\'s hallways and doorways?',
+      options: [
+        { label: 'Yes', points: 0 },
+        { label: 'Not sure', points: 1 },
+        { label: 'No, they seem narrow', points: 2, flag: 'Narrow doorways and hallways can limit mobility-aid access — this usually needs an actual measurement to confirm.' }
+      ]
+    },
+    {
+      id: 'lighting',
+      text: 'Is the home well-lit at night, including hallways and any stairs?',
+      options: [
+        { label: 'Yes', points: 0 },
+        { label: 'Somewhat', points: 1 },
+        { label: 'No, some areas are dim', points: 2, flag: 'Poor nighttime lighting in hallways or stairwells is an easy, low-cost fix with real safety impact.' }
+      ]
+    },
+    {
+      id: 'handrails',
+      text: 'If there are stairs, do they have handrails on both sides?',
+      skipIf: function(a){ return a.stories === 0; },
+      options: [
+        { label: 'Yes, both sides', points: 0 },
+        { label: 'One side only', points: 1 },
+        { label: 'Neither side', points: 2, flag: 'Stairs without handrails on both sides are a significant fall risk.' }
+      ]
+    },
+    {
+      id: 'lives_alone',
+      text: 'Does the person being assessed live alone?',
+      options: [
+        { label: 'No', points: 0 },
+        { label: 'Yes', points: 1 }
+      ]
+    }
+  ];
+
+  var current = 0;
+  var answers = {};
+  var quizFlags = [];
+  var quizHistory = [];
+  var selected = null;
+
+  function resetQuiz(){
+    current = 0; answers = {}; quizFlags = []; quizHistory = []; selected = null;
+    document.getElementById('results-view').style.display = 'none';
+    document.getElementById('quiz-view').style.display = 'block';
+  }
+
+  function activeQuestion(idx){
+    var q = QUESTIONS[idx];
+    if (q.skipIf && q.skipIf(answers)) return null;
+    return q;
+  }
+
+  function nextIndex(from){
+    var i = from;
+    while (i < QUESTIONS.length) {
+      if (activeQuestion(i)) return i;
+      i++;
+    }
+    return QUESTIONS.length;
+  }
+
+  function renderQuestion(){
+    var idx = nextIndex(current);
+    if (idx >= QUESTIONS.length) { showResults(); return; }
+    current = idx;
+    selected = null;
+    var q = QUESTIONS[idx];
+
+    document.getElementById('q-num').textContent = quizHistory.length + 1;
+    document.getElementById('progress-fill').style.width = Math.min(95, (quizHistory.length / 12) * 100 + 8) + '%';
+    document.getElementById('q-text').textContent = q.text;
+    document.getElementById('select-hint').style.display = 'none';
+
+    var optsEl = document.getElementById('q-options');
+    optsEl.innerHTML = '';
+    q.options.forEach(function(opt){
+      var btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.textContent = opt.label;
+      btn.onclick = function(){
+        optsEl.querySelectorAll('.opt-btn').forEach(function(b){ b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        selected = opt;
+        document.getElementById('select-hint').style.display = 'none';
+      };
+      optsEl.appendChild(btn);
+    });
+
+    document.getElementById('back-link').className = quizHistory.length > 0 ? 'back-link' : 'back-link hidden';
+  }
+
+  document.getElementById('next-btn').onclick = function(){
+    if (!selected) {
+      document.getElementById('select-hint').style.display = 'block';
+      return;
+    }
+    var q = QUESTIONS[current];
+    answers[q.id] = selected.points;
+    if (selected.flag) quizFlags.push(selected.flag);
+    quizHistory.push(current);
+    current = current + 1;
+    renderQuestion();
+  };
+
+  document.getElementById('back-link').onclick = function(){
+    if (quizHistory.length === 0) return;
+    var prevIdx = quizHistory.pop();
+    var q = QUESTIONS[prevIdx];
+    if (answers[q.id] !== undefined) {
+      var wasFlag = q.options.filter(function(o){ return o.points === answers[q.id] && o.flag; })[0];
+      if (wasFlag) {
+        var fi = quizFlags.indexOf(wasFlag.flag);
+        if (fi > -1) quizFlags.splice(fi, 1);
+      }
+      delete answers[q.id];
+    }
+    current = prevIdx;
+    renderQuestion();
+  };
+
+  function showResults(){
+    document.getElementById('quiz-view').style.display = 'none';
+    document.getElementById('results-view').style.display = 'block';
+
+    var total = 0;
+    for (var k in answers) total += answers[k];
+
+    var tier, heading, summary, tierClass;
+    if (total <= 4) {
+      tier = 'Low concern'; tierClass = 'tier-low';
+      heading = 'This home looks relatively low-risk';
+      summary = "Based on your answers, we didn't flag many common aging-in-place hazards. That's a good sign — a professional assessment can still catch details a checklist can't, like exact clearances and code-specific recommendations.";
+    } else if (total <= 10) {
+      tier = 'Moderate concern'; tierClass = 'tier-moderate';
+      heading = 'A few things worth addressing';
+      summary = 'Your answers flagged some real, common aging-in-place concerns below. Several of these are inexpensive fixes; others (like doorway width or entry steps) are worth having measured properly.';
+    } else {
+      tier = 'Higher concern'; tierClass = 'tier-high';
+      heading = 'Several meaningful risk factors flagged';
+      summary = "Your answers flagged several factors associated with fall risk and reduced independence at home. This is exactly the kind of situation a full, prioritized professional assessment is built for — it'll tell you what matters most and roughly what it costs to fix.";
+    }
+
+    document.getElementById('result-tier-badge').innerHTML = '<span class="result-tier ' + tierClass + '">' + tier + '</span>';
+    document.getElementById('result-heading').textContent = heading;
+    document.getElementById('result-summary').textContent = summary;
+
+    var flagsEl = document.getElementById('result-flags');
+    flagsEl.innerHTML = '';
+    if (quizFlags.length === 0) {
+      var li = document.createElement('li');
+      li.textContent = 'No specific concerns flagged from your answers.';
+      flagsEl.appendChild(li);
+    } else {
+      quizFlags.forEach(function(f){
+        var li = document.createElement('li');
+        var dot = document.createElement('span');
+        dot.className = 'flag-dot';
+        var span = document.createElement('span');
+        span.textContent = f;
+        li.appendChild(dot);
+        li.appendChild(span);
+        flagsEl.appendChild(li);
+      });
+    }
+  }
+
+  document.getElementById('restart-link').onclick = function(){
+    resetQuiz();
+    renderQuestion();
+  };
+
+  resetQuiz();
+  renderQuestion();
+
+  window.addEventListener('pageshow', function(){
+    resetQuiz();
+    renderQuestion();
+  });
+</script>
+
+</body>
+</html>

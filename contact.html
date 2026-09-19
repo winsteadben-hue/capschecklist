@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | AgingInPlaceChecklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#F0EEE6; --ink:#1E2A2E; --ink-soft:#4A5A5E;
+    --brass-deep:#8A6531; --sage-deep:#33463F; --line:#D8D2C2; --white:#FFFFFF;
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--stone); color:var(--ink); line-height:1.6;}
+  h1{font-family:'Source Serif 4', serif; font-weight:600; font-size:34px; margin:0 0 8px 0;}
+  p{color:var(--ink-soft); font-size:15.5px;}
+  a{color:var(--sage-deep);}
+  .wrap{max-width:560px; margin:0 auto; padding:0 24px;}
+  header{background:var(--white); border-bottom:1px solid var(--line); margin-bottom:40px;}
+  .header-inner{display:flex; align-items:center; justify-content:space-between; padding:20px 24px; max-width:1080px; margin:0 auto; flex-wrap:wrap; gap:16px;}
+  .brand{font-family:'Source Serif 4', serif; font-size:22px; font-weight:700; color:var(--ink); text-decoration:none;}
+  .brand em{font-style:normal; color:var(--brass-deep);}
+  nav a{margin-left:18px; font-size:14px; color:var(--ink-soft); text-decoration:none;}
+  nav a:hover{color:var(--sage-deep);}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:13px; font-weight:500; color:var(--ink-soft); margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:3px;
+    font-size:15px; font-family:inherit; background:var(--white); color:var(--ink);
+  }
+  .field textarea{min-height:120px; resize:vertical;}
+  button{
+    background:var(--brass-deep); color:var(--white); border:none; padding:13px 26px;
+    border-radius:3px; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer;
+  }
+  button:hover{background:#734F26;}
+  .note{font-size:13px; margin-top:14px;}
+  footer{border-top:1px solid var(--line); margin-top:56px; padding:28px 0;}
+  footer p{font-size:12.5px;}
+  main{padding-bottom:40px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html">Aging In Place <em>Home Safety Checklist</em></a>
+    <nav>
+      <a href="index.html">Search</a>
+      <a href="checklist.html">Free Checklist</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Contact</h1>
+  <p>Have a correction or a question? Send a note below, or email us directly at <a href="mailto:hello@AgingInPlaceChecklist.us">hello@AgingInPlaceChecklist.us</a>.</p>
+
+  <!--
+    This form currently just opens a pre-filled email via mailto.
+    To collect submissions properly, replace the form's behavior with
+    a real form backend (e.g. Formspree, a simple serverless function,
+    or your own mail handler) once the site is hosted.
+  -->
+  <form onsubmit="event.preventDefault(); window.location.href='mailto:hello@AgingInPlaceChecklist.us?subject=' + encodeURIComponent(document.getElementById('subject').value) + '&body=' + encodeURIComponent('From: ' + document.getElementById('name').value + ' (' + document.getElementById('email').value + ')\n\n' + document.getElementById('message').value);">
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+    </div>
+    <div class="field">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="e.g. Listing correction, General question">
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" required></textarea>
+    </div>
+    <button type="submit">Send message</button>
+  </form>
+  <p class="note">This opens your email client with the message pre-filled â€” replace with a real form handler before launch if you'd rather not rely on that.</p>
+</main>
+
+<footer class="wrap">
+  <p>AgingInPlaceChecklist is an independent tool and is not affiliated with, endorsed by, or sponsored by the National Association of Home Builders (NAHB).</p>
+</footer>
+</body>
+</html>
+
