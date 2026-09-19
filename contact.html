@@ -60,34 +60,28 @@
 
 <main class="wrap">
   <h1>Contact</h1>
-  <p>Have a correction or a question? Send a note below, or email us directly at <a href="mailto:hello@AgingInPlaceChecklist.us">hello@AgingInPlaceChecklist.us</a>.</p>
+  <p>Have a correction or a question? Send a note below.</p>
 
-  <!--
-    This form currently just opens a pre-filled email via mailto.
-    To collect submissions properly, replace the form's behavior with
-    a real form backend (e.g. Formspree, a simple serverless function,
-    or your own mail handler) once the site is hosted.
-  -->
-  <form onsubmit="event.preventDefault(); window.location.href='mailto:hello@AgingInPlaceChecklist.us?subject=' + encodeURIComponent(document.getElementById('subject').value) + '&body=' + encodeURIComponent('From: ' + document.getElementById('name').value + ' (' + document.getElementById('email').value + ')\n\n' + document.getElementById('message').value);">
-    <div class="field">
-      <label for="name">Name</label>
-      <input type="text" id="name" required>
+  <form action=”https://formspree.io/f/xnpnjnva” method=”POST”>
+    <input type=”hidden” name=”_subject” value=”AgingInPlaceChecklist contact form”>
+    <div class=”field”>
+      <label for=”name”>Name</label>
+      <input type=”text” id=”name” name=”name” required>
     </div>
-    <div class="field">
-      <label for="email">Email</label>
-      <input type="email" id="email" required>
+    <div class=”field”>
+      <label for=”email”>Email</label>
+      <input type=”email” id=”email” name=”email” required>
     </div>
-    <div class="field">
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" placeholder="e.g. Listing correction, General question">
+    <div class=”field”>
+      <label for=”subject”>Subject</label>
+      <input type=”text” id=”subject” name=”subject” placeholder=”e.g. General question, Feedback”>
     </div>
-    <div class="field">
-      <label for="message">Message</label>
-      <textarea id="message" required></textarea>
+    <div class=”field”>
+      <label for=”message”>Message</label>
+      <textarea id=”message” name=”message” required></textarea>
     </div>
-    <button type="submit">Send message</button>
+    <button type=”submit”>Send message</button>
   </form>
-  <p class="note">This opens your email client with the message pre-filled â€” replace with a real form handler before launch if you'd rather not rely on that.</p>
 </main>
 
 <footer class="wrap">
