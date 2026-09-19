@@ -165,7 +165,17 @@
   footer{border-top:1px solid var(--line); padding:32px 0; margin-top:24px;}
   footer p{font-size:13px; color:var(--ink-soft); max-width:70ch;}
   footer .links{display:flex; gap:16px; margin-top:12px; font-size:13px; flex-wrap:wrap;}
+  .email-capture{border-top:1px solid var(--line); margin-top:20px; padding-top:18px;}
+  .email-capture > p{font-size:14px; color:var(--ink-soft); margin-bottom:10px;}
+  .email-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .email-row input{flex:1; min-width:180px; padding:10px 12px; border:1px solid var(--line); border-radius:3px; font-size:14px; font-family:inherit; color:var(--ink); background:var(--white);}
+  .email-row input:focus{outline:none; border-color:var(--sage-deep);}
+  .email-send-btn{background:var(--sage-deep); color:var(--white); border:none; padding:10px 18px; border-radius:3px; font-size:14px; font-weight:600; font-family:inherit; cursor:pointer; white-space:nowrap;}
+  .email-send-btn:hover{background:#29362F;}
+  .email-send-btn:disabled{opacity:0.5; cursor:default;}
+  .email-status{font-size:13px; margin-top:8px; color:var(--ink-soft);}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -219,12 +229,21 @@
           <ul class="flags" id="result-flags"></ul>
           <div class="disclaimer">This checklist uses simple, fixed scoring based on your answers — it is a quick screening tool, not a professional evaluation. A full assessment considers actual room measurements, photos, and many more factors.</div>
 
+          <div class="email-capture" id="email-capture">
+            <p>Want a copy of these results sent to your inbox?</p>
+            <div class="email-row">
+              <input type="email" id="email-input" placeholder="your@email.com">
+              <button class="email-send-btn" id="email-send-btn">Email me my results</button>
+            </div>
+            <div class="email-status" id="email-status"></div>
+          </div>
+
           <div class="safehome-banner">
             <div>
               <h3>Want the full picture?</h3>
               <p>SafeHome Partners builds a personalized, AI-powered report with specific measurements, cost estimates, and a prioritized action plan — starting at $79.</p>
             </div>
-            <a class="btn" href="https://safehomepartners.com?utm_source=capschecklist&utm_medium=referral&utm_campaign=checklist_results" target="_blank" rel="noopener">Get your full report →</a>
+            <a class="btn" href="https://safehomepartners.com?utm_source=capschecklist&utm_medium=referral&utm_campaign=checklist_results">Get your full report →</a>
           </div>
 
           <a class="restart-link" id="restart-link">↻ Take the checklist again</a>
@@ -457,11 +476,17 @@
   var quizFlags = [];
   var quizHistory = [];
   var selected = null;
+  var resultData = { tier: '', heading: '', summary: '', flags: [] };
 
   function resetQuiz(){
     current = 0; answers = {}; quizFlags = []; quizHistory = []; selected = null;
+    resultData = { tier: '', heading: '', summary: '', flags: [] };
     document.getElementById('results-view').style.display = 'none';
     document.getElementById('quiz-view').style.display = 'block';
+    document.getElementById('email-input').value = '';
+    document.getElementById('email-status').textContent = '';
+    var btn = document.getElementById('email-send-btn');
+    btn.disabled = false; btn.textContent = 'Email me my results';
   }
 
   function activeQuestion(idx){
@@ -560,6 +585,10 @@
       summary = "Your answers flagged several factors associated with fall risk and reduced independence at home. This is exactly the kind of situation a full, prioritized professional assessment is built for — it'll tell you what matters most and roughly what it costs to fix.";
     }
 
+    resultData.tier = tier;
+    resultData.heading = heading;
+    resultData.summary = summary;
+    resultData.flags = quizFlags.slice();
     document.getElementById('result-tier-badge').innerHTML = '<span class="result-tier ' + tierClass + '">' + tier + '</span>';
     document.getElementById('result-heading').textContent = heading;
     document.getElementById('result-summary').textContent = summary;
@@ -596,6 +625,41 @@
     resetQuiz();
     renderQuestion();
   });
+
+  var EMAILJS_PUBLIC_KEY  = 'olUYzBE9t4sf7MR6O';
+  var EMAILJS_SERVICE_ID  = 'serv_lhuw7ypice';
+  var EMAILJS_TEMPLATE_ID = 'template_6xrz005';
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  document.getElementById('email-send-btn').onclick = function(){
+    var emailVal = document.getElementById('email-input').value.trim();
+    var statusEl = document.getElementById('email-status');
+    if (!emailVal || emailVal.indexOf('@') === -1) {
+      statusEl.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    var btn = document.getElementById('email-send-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    statusEl.textContent = '';
+    var flagsText = resultData.flags.length > 0
+      ? resultData.flags.map(function(f){ return '• ' + f; }).join('\n')
+      : 'No specific concerns flagged from your answers.';
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      to_email:       emailVal,
+      result_tier:    resultData.tier,
+      result_heading: resultData.heading,
+      result_summary: resultData.summary,
+      result_flags:   flagsText
+    }).then(function(){
+      statusEl.textContent = 'Sent! Check your inbox.';
+      btn.textContent = 'Sent';
+    }, function(){
+      statusEl.textContent = 'Something went wrong. Please try again.';
+      btn.disabled = false;
+      btn.textContent = 'Email me my results';
+    });
+  };
 </script>
 
 </body>
