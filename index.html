@@ -691,6 +691,21 @@
       btn.textContent = 'Email me my results';
     });
   };
+
+  function openNahbSearch(){
+    var designation = document.getElementById('designation').value;
+    var keyword = document.getElementById('keyword').value.trim();
+    var base = "https://www.nahb.org/nahb-community/nahb-directories/professionals-with-home-building-credentials-directory";
+    var hashParts = ["sort=%40lastname%20ascending", "numberOfResults=25"];
+    if (designation) {
+      hashParts.push("f:Designation=[" + designation + "]");
+    }
+    if (keyword) {
+      hashParts.push("q=" + encodeURIComponent(keyword));
+    }
+    var url = base + "#" + hashParts.join("&");
+    window.open(url, "_blank", "noopener");
+  }
 </script>
 
 </body>
